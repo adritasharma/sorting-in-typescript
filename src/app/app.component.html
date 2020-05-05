@@ -1,4 +1,7 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
+  
+<p *ngFor="let item of items;let i = index">
+ {{i+1}}.  <a [routerLink]="[item.path]">{{item.display}}</a>
 </p>
+
+
+<router-outlet></router-outlet>
