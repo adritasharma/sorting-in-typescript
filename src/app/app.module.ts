@@ -8,10 +8,11 @@ import { BubbleSortComponent } from './bubble-sort/bubble-sort.component';
 
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routing.module';
+import { SelectionSortComponent } from './selection-sort/selection-sort.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routes) ],
-  declarations: [ AppComponent, HelloComponent, BubbleSortComponent ],
+  declarations: [ AppComponent, HelloComponent, BubbleSortComponent, SelectionSortComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

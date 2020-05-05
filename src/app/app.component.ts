@@ -6,5 +6,8 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  items = [{ display: "Bubble Sort", path: "bubble-sort" }];
+  items = [
+    { display: "Bubble Sort", path: "bubble-sort" },
+    { display: "Selection Sort", path: "selection-sort" }
+    ];
 }
