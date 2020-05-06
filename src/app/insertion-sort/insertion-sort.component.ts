@@ -1,35 +1,34 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: "app-bubble-sort",
-  templateUrl: "./bubble-sort.component.html",
-  styleUrls: ["./bubble-sort.component.css"]
+  selector: 'app-insertion-sort',
+  templateUrl: './insertion-sort.component.html',
+  styleUrls: ['./insertion-sort.component.css']
 })
-export class BubbleSortComponent implements OnInit {
-  constructor() {}
+export class InsertionSortComponent implements OnInit {
 
-  input = [5,1,4,2,8];
+  input = [2, 4, 5, 2, 1, 3];
 
   output = [...this.input];
-
-  passes = [];
 
   ngOnInit() {
     let length = this.output.length;
     let arr = this.output;
 
     for (var i = 0; i < length - 1; i++) {
-      let subPasses = [];
-      for (var j = 0; j < length - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          var temp = arr[j];
-          arr[j] = arr[j + 1];
-          arr[j + 1] = temp;
+      var min_index = i;
+
+      for (var j = i + 1; j < length; j++) {
+        if (arr[j] < arr[min_index]) {
+          min_index = j;
         }
-        subPasses.push([...arr]);
       }
+      console.log(min_index);
+
+      var temp = arr[i];
+      arr[i] = arr[min_index];
+      arr[min_index] = temp;
       console.log(arr);
-      this.passes.push(subPasses);
     }
   }
   algorithm = `
