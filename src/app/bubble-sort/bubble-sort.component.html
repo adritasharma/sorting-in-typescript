@@ -1,8 +1,19 @@
 <h2>Bubble Sort</h2>
-<p> Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+<p> Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in
+	wrong order.
 </p>
 
 <p>Input : {{input | json}}</p>
+
+<h4>Passes:</h4>
+
+<div *ngFor="let step of passes;let i=index">
+	<h5>Pass {{i+1}}</h5>
+		<span *ngFor="let item of step;let j = index">
+      {{item | json}} <span *ngIf="j != step.length -1">-></span>
+		</span> 
+</div>
+
 
 <p>Output : {{output | json}}</p>
 
@@ -15,15 +26,14 @@
 
 <h4> Notes:</h4>
 <ul>
-  <li *ngFor="let note of notes">
-    {{note}}
-  </li>
+	<li *ngFor="let note of notes">
+		{{note}}
+	</li>
 </ul>
 
 <h4> Time and Space complexity :</h4>
 <ul>
-  <li *ngFor="let item of complexity">
-    {{item}}
-  </li>
+	<li *ngFor="let item of complexity">
+		{{item}}
+	</li>
 </ul>
-
