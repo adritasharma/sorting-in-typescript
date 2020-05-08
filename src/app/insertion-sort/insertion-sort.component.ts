@@ -1,48 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-insertion-sort',
-  templateUrl: './insertion-sort.component.html',
-  styleUrls: ['./insertion-sort.component.css']
+  selector: "app-insertion-sort",
+  templateUrl: "./insertion-sort.component.html",
+  styleUrls: ["./insertion-sort.component.css"]
 })
 export class InsertionSortComponent implements OnInit {
-
-  input = [2, 4, 5, 2, 1, 3];
+  input = [9,5,1,4,3];
 
   output = [...this.input];
+  passes = [];
 
   ngOnInit() {
     let length = this.output.length;
     let arr = this.output;
 
-    for (var i = 0; i < length; i++) {
+    for (var i = 1; i < length; i++) {
       var key = arr[i];
-      var j = i-1;
+      var j = i - 1;
 
-      // while(j >0 && arr[j] < key){
-      //   arr[j+1] = arr[j];
-      //   j--;
-      // }
-      arr[j+1] = key
-
+      while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+        j--;
+      }
+      arr[j + 1] = key;
       console.log(arr);
+      this.passes.push([...arr]);
     }
   }
   algorithm = `
-   for (var i = 0; i < length - 1; i++) {
-      for (var j = 0; j < length - i - 1; j++) {
-        if (arr[j] > arr[j + 1]) {
-          swap(arr[j],arr[j + 1])
+    for (var i = 1; i < length; i++) {
+        var key = arr[i];
+        var j = i-1;
+
+        while(j >= 0 && arr[j] > key){
+          arr[j+1] = arr[j];
+          j--;
         }
-      }
+        arr[j+1] = key
     }
   `;
 
   notes = [
-    `Outer loop is responsible to get the biggest element to the last.`,
-    `The inner loop is responsible to swap unsorted adjacent elements`,
-    `Iterating  (length -1) times since we need minimum 2 elements to swap`,
-    `Inner loop has (length - i - 1) times iteration as for each iteration of outer loop (i), we get largest element at last. Example i= 0, we get largest at last,  so when i= 1, we can skip 1 element`
+    `The first element in the array (i=0) is assumed to be sorted, therefore in outer loop (unsorted loop), i started from 1.`,
+    "The first element of the unsorted part is taken as key",
+    "the last element of the sorted array is taken as j",
+    "the sorted part is looped from last element (j) to first (j=0) and all the elements  greater than key are is shifted one position ahead",
+    "When the element smaller than the key is found, it is places in the sorted array correct position."
   ];
 
   complexity = [

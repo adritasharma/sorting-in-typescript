@@ -1,16 +1,25 @@
 <h2>Insertion Sort</h2>
-<p> The insertion sort algorithm we divide the array in 2 parts i.e sorted and unsorted, pick the first element from
-	unsorted part and place it in the correct posiition of sored part until the unsorted part is empty.
+<p> The insertion sort algorithm we divide the array in 2 parts i.e sorted and unsorted, the first element from unsorted part is picked and placed it in the correct position of sored part until the unsorted part is empty.
 </p>
 
 
 <p>Input : {{input | json}}</p>
 
+<h4>Passes:</h4>
+
+<div *ngFor="let step of passes;let i=index">
+	<h5>Pass {{i+1}}</h5>
+		<span *ngFor="let item of step;let j = index">
+      {{item | json}} <span *ngIf="j != step.length -1">-></span>
+		</span> 
+</div>
+
+
 <p>Output : {{output | json}}</p>
 
 <hr>
 
-<!-- <h4>Algorithm</h4>
+ <h4>Algorithm</h4>
 <pre>{{algorithm}}</pre>
 
 <hr>
@@ -21,7 +30,7 @@
 		{{note}}
 	</li>
 </ul>
-
+<!--
 <h4> Time and Space complexity :</h4>
 <ul>
 	<li *ngFor="let item of complexity">
