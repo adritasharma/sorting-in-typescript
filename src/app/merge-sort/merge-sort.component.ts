@@ -35,5 +35,14 @@ export class MergeSortComponent implements OnInit {
 
     console.log("left", left);
     console.log("right", right);
+    console.log("==========================");
+
+    if (left.length > 1) {
+      this.mergeSort(left);
+    }
+
+    if (right.length > 1) {
+      this.mergeSort(right);
+    }
   }
 }
