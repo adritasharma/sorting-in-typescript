@@ -15,19 +15,16 @@ export class InsertionSortComponent implements OnInit {
     let length = this.output.length;
     let arr = this.output;
 
-    for (var i = 0; i < length - 1; i++) {
-      var min_index = i;
+    for (var i = 0; i < length; i++) {
+      var key = arr[i];
+      var j = i-1;
 
-      for (var j = i + 1; j < length; j++) {
-        if (arr[j] < arr[min_index]) {
-          min_index = j;
-        }
-      }
-      console.log(min_index);
+      // while(j >0 && arr[j] < key){
+      //   arr[j+1] = arr[j];
+      //   j--;
+      // }
+      arr[j+1] = key
 
-      var temp = arr[i];
-      arr[i] = arr[min_index];
-      arr[min_index] = temp;
       console.log(arr);
     }
   }
