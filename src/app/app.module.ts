@@ -11,10 +11,11 @@ import { routes } from './app.routing.module';
 import { SelectionSortComponent } from './selection-sort/selection-sort.component';
 import { InsertionSortComponent } from './insertion-sort/insertion-sort.component';
 import { MergeSortComponent } from './merge-sort/merge-sort.component';
+import { BinarySearchComponent } from './search/binary-search/binary-search.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, RouterModule.forRoot(routes) ],
-  declarations: [ AppComponent, HelloComponent, BubbleSortComponent, SelectionSortComponent, InsertionSortComponent, MergeSortComponent ],
+  declarations: [ AppComponent, HelloComponent, BubbleSortComponent, SelectionSortComponent, InsertionSortComponent, MergeSortComponent, BinarySearchComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
